@@ -1,0 +1,18 @@
+import java.util.*; //imports all the predefined classes in java
+public class DigSum{ //creating class DigitSum
+public static void main(String[] args) { //main method
+  Scanner sc=new Scanner(System.in); //creating object for scanner class
+  System.out.println("Enter a number:");
+  int n=sc.nextInt(); //reads input from the keyboard
+  int sum=0; //initializing sum to 0
+  while(n>0||sum>=10){ //loop runs only until n>0 or sum>=10
+    if(n==0) { //reinitializing the process if n becomes 0
+      n=sum;
+      sum=0;
+    }
+    sum+=n%10; //adding the digits
+    n/=10;
+  }
+  System.out.println("The digsum is:"+sum); //prints result
+  }
+}
