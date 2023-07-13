@@ -1,0 +1,20 @@
+import java.util.*; //imports all predefined classes of java
+public class Pattern{ //creating class pattern
+    public static void main(String[] args) { //main method
+        Scanner sc=new Scanner(System.in); //creating object of the scanner class
+        System.out.println("Enter the level:");
+        int n=sc.nextInt(); //reads input of the user
+        for(int i=1;i<n+1;i++) { //for loop to print rows
+            for(int space=i;space<n;space++) { //loop for space
+                System.out.print(" ");
+            }
+            for(int j=i;j<=2*i-1;j++) { //loop for columns
+                System.out.print(j+" ");
+            }
+            for(int k=2*i-2;k>=i;k--) { //loop to print
+                System.out.print(k+" ");
+            }
+            System.out.println();
+        }
+    }
+}
