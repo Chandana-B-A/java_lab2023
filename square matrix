@@ -1,0 +1,17 @@
+import java.util.*
+public class Matrix multiplication{
+  public static void main(String[] args) {
+  int sum=0;
+  System.out.println("Enter the no.of rows and column:")
+  Scanner sc=new Scanner(System.in);
+  int a=sc.nextInt();
+  if(n<=0) {
+    System.out.println("Invalid");
+  }
+  while(n!=0){
+    sum=sum+a*a;
+    a--;
+  }
+  System.out.println("The no of square matrices is:"+sum);
+  }
+}
