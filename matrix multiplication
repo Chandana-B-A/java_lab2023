@@ -1,0 +1,48 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int i,j,a,b,c,d,k;
+        System.out.println("Enter rows of mat1:");
+        a=sc.nextInt();
+        System.out.println("Enter col of mat1:");
+        b=sc.nextInt();
+        int arr1[][]=new int[a][b];
+        System.out.println("Enter mat1 ele:");
+        for(i=0;i<a;i++){
+            for(j=0;j<b;j++){
+                arr1[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("Enter rows of mat2:");
+        c=sc.nextInt();
+        System.out.println("Enter col of mat2:");
+        d=sc.nextInt();
+        if(a!=d){
+            System.out.println("Cant be multi");
+        }
+        int arr2[][]=new int[c][d];
+        System.out.println("Enter mat2 ele:");
+        for(i=0;i<c;i++){
+            for(j=0;j<d;j++){
+                arr2[i][j]=sc.nextInt();
+            }
+        }
+        int res[][]=new int[a][d];
+        for(i=0;i<a;i++){
+            for(j=0;j<d;j++){
+                res[i][j]=0;
+                for(k=0;k<c;k++){
+                    res[i][j]+=arr1[i][k]*arr2[k][j];
+                }
+            }
+        }
+        System.out.println("after multiplication");
+        for(i=0;i<a;i++){
+            for(j=0;j<d;j++){
+                System.out.print(res[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
