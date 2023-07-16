@@ -1,0 +1,26 @@
+import java.util.*;
+interface A{
+    int speed=90;
+    void distance();
+}
+interface B{
+    int distance=70;
+    void speed();
+}
+class Vehicle implements A,B{
+   public void distance(){
+        int dist=speed*100;
+        System.out.println("The dist is:"+dist);
+    }
+    public void speed(){
+        int speed=distance/100;
+        System.out.println("The speed is:"+speed);
+    }
+}
+class Main{
+    public static void main(String[] args){
+        Vehicle v=new Vehicle();
+        v.distance();
+        v.speed();
+    }
+}
