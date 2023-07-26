@@ -1,0 +1,80 @@
+package java_project_package;
+
+public class ll {
+	class Node
+	{
+		int data;
+		Node prev;
+		Node next;
+		public Node(int data)
+		{
+			this.data=data;
+		}
+	}
+	Node head,tail= null;
+	public void add(int data)
+	{
+		Node nn=new Node(data);
+		if(head==null)
+		{
+			head=tail=nn;
+			head.prev=null;
+			tail.next=null;
+		}
+		else
+		{
+			tail.next=nn;
+			nn.prev=tail;
+			tail=nn;
+			tail.next=null;
+		}
+	}
+	public int min()
+	{
+		Node cur=head;
+		int s=head.data;
+		if(head==null)
+			System.out.println("empty");
+		else
+		{
+			s=head.data;
+			while(cur!=null)
+			{
+				if(s>cur.data)
+					s=cur.data;
+				cur=cur.next;
+			}
+		}
+		return s;
+	}
+	public int max()
+	{
+		Node cur=head;
+		int b=head.data;
+		if(head==null)
+			System.out.println("empty");
+		else
+		{
+			b=head.data;
+			while(cur!=null)
+			{
+				if(b<cur.data)
+					b=cur.data;
+				cur=cur.next;
+			}
+		}
+		return b;
+	}
+	public static void main(String args[])
+	{
+		ll dl=new ll();
+		dl.add(0);
+		dl.add(9);
+		dl.add(78);
+		dl.add(57);
+		dl.add(676);
+		dl.add(68);
+		System.out.println("minimun: "+dl.min());
+		System.out.println("maximun: "+dl.max());
+	}
+}
